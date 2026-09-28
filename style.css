@@ -1,0 +1,672 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+    linear-gradient(rgba(0, 234, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 234, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(
+        circle at center,
+        #071c2b 0%,
+        #020a10 45%,
+        #000000 100%
+    );
+
+background-size:
+    32px 32px,
+    32px 32px,
+    100% 100%;
+
+    font-family: Tahoma, Arial, sans-serif;
+
+    color: #00eaff;
+}
+
+.ventana {
+    width: 500px;
+    margin: 80px auto;
+
+    background: #020609;
+
+    border: 2px solid #00d9f5;
+
+    box-shadow:
+        0 0 5px #00d9f5,
+        inset 0 0 10px rgba(0, 217, 245, 0.08);
+}
+
+.barra-titulo {
+    height: 30px;
+
+    background: #071014;
+
+    border-bottom: 2px solid #00d9f5;
+
+    color: #00eaff;
+
+    padding: 4px 5px 4px 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    font-size: 14px;
+
+    text-shadow: 0 0 5px #00eaff;
+
+    cursor: move;
+    user-select: none;
+}
+
+.boton-cerrar {
+    width: 24px;
+    height: 20px;
+
+    background: #071014;
+
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.contenido-ventana {
+    padding: 20px;
+
+    background: #020609;
+    color: #00eaff;
+
+    font-family: "Courier New", monospace;
+}
+
+.icono-escritorio {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+
+    width: 90px;
+    text-align: center;
+
+    color: white;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    text-shadow: 1px 1px 2px black;
+}
+
+.imagen-icono {
+    font-size: 42px;
+    margin-bottom: 4px;
+}
+
+.barra-inferior {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 42px;
+
+    background: #020609;
+    border-top: 2px solid #00d9f5;
+
+    display: flex;
+    align-items: center;
+
+    color: #00eaff;
+
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+
+    box-shadow: 0 -2px 8px rgba(0, 217, 245, 0.15);
+}
+
+.menu-inicio {
+    height: 100%;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+
+    border-right: 1px solid #00d9f5;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accesos-barra {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    gap: 25px;
+
+    padding-left: 25px;
+}
+
+.accesos-barra span {
+    cursor: pointer;
+}
+
+.reloj {
+    margin-left: auto;
+
+    height: 100%;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+
+    border-left: 1px solid #00d9f5;
+}
+
+.ventana-dibujos {
+    display: none;
+}
+
+.ventana-musica {
+    display: none;
+    width: 380px;
+}
+
+.contenido-musica {
+    padding: 12px;
+    background: #020609;
+    font-family: "Courier New", monospace;
+}
+
+.pantalla-musica {
+    border: 1px solid #00d9f5;
+    padding: 10px;
+
+    color: #00eaff;
+    background: #000000;
+}
+
+.pantalla-musica span {
+    font-size: 12px;
+}
+
+.pantalla-musica p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+.controles-musica {
+    margin-top: 10px;
+
+    display: flex;
+    gap: 6px;
+}
+
+.controles-musica button {
+    background: #071014;
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    height: 28px;
+    min-width: 38px;
+
+    font-family: "Courier New", monospace;
+
+    cursor: pointer;
+}
+
+.nombre-cancion {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.tiempo-musica {
+    display: flex;
+    gap: 6px;
+
+    font-size: 12px;
+    color: #00eaff;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+
+    margin: 10px 0;
+
+    background: #001014;
+    border: 1px solid #00d9f5;
+
+    cursor: pointer;
+}
+
+.progreso {
+    width: 0%;
+    height: 100%;
+
+    background: #00d9f5;
+
+    box-shadow: 0 0 6px #00eaff;
+}
+
+.galeria-dibujos {
+    margin-top: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    max-height: 350px;
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.tarjeta-dibujo {
+    width: 100%;
+
+    border: 1px solid #00d9f5;
+    background: #000000;
+
+    padding: 4px;
+
+    cursor: pointer;
+}
+
+.tarjeta-dibujo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.visor-dibujo {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.visor-contenido {
+    position: relative;
+
+    max-width: 80%;
+    max-height: 85%;
+
+    padding: 8px;
+
+    background: #020609;
+    border: 2px solid #00d9f5;
+
+    box-shadow: 0 0 12px #00d9f5;
+}
+
+.visor-contenido img {
+    display: block;
+
+    max-width: 80vw;
+    max-height: 80vh;
+
+    width: auto;
+    height: auto;
+}
+
+.cerrar-visor {
+    position: absolute;
+
+    top: -12px;
+    right: -12px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #020609;
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.visor-anterior,
+.visor-siguiente {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 38px;
+    height: 50px;
+
+    background: #020609;
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.visor-anterior {
+    left: -50px;
+}
+
+.visor-siguiente {
+    right: -50px;
+}
+
+.ventana-juegos {
+    display: none;
+}
+
+.galeria-juegos {
+    margin-top: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    max-height: 380px;
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.tarjeta-juego {
+    border: 1px solid #00d9f5;
+    background: #000000;
+
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+.tarjeta-juego img {
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.info-tarjeta-juego {
+    padding: 7px 3px 3px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: "Courier New", monospace;
+}
+
+.info-tarjeta-juego strong {
+    color: #00eaff;
+    font-size: 12px;
+}
+
+.info-tarjeta-juego span {
+    color: #00eaff;
+    font-size: 11px;
+}
+
+.ficha-juego {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.ficha-juego-contenido {
+    width: 600px;
+    max-width: 90%;
+    max-height: 85vh;
+
+    background: #020609;
+    border: 2px solid #00d9f5;
+
+    box-shadow: 0 0 12px #00d9f5;
+
+    overflow-y: auto;
+
+    font-family: "Courier New", monospace;
+    color: #00eaff;
+}
+
+.barra-ficha-juego {
+    height: 30px;
+
+    padding: 4px 5px 4px 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #071014;
+    border-bottom: 2px solid #00d9f5;
+
+    font-weight: bold;
+}
+
+.barra-ficha-juego button {
+    width: 24px;
+    height: 20px;
+
+    background: #071014;
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    cursor: pointer;
+}
+
+.interior-ficha-juego {
+    display: flex;
+    gap: 20px;
+
+    padding: 20px;
+}
+
+#ficha-portada {
+    width: 150px;
+    height: 210px;
+
+    object-fit: cover;
+
+    border: 1px solid #00d9f5;
+}
+
+.datos-juego {
+    flex: 1;
+}
+
+.datos-juego h2 {
+    margin-top: 0;
+
+    color: #00eaff;
+    font-size: 20px;
+}
+
+.texto-ficha {
+    padding: 0 20px 20px;
+
+    border-top: 1px solid #004b55;
+}
+
+/* DECORACIONES DEL FONDO */
+
+.decoraciones {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.texto-sistema {
+    position: absolute;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: rgba(0, 234, 255, 0.35);
+    letter-spacing: 1px;
+}
+
+.decoracion-1 {
+    top: 40px;
+    left: 30px;
+}
+
+.decoracion-2 {
+    top: 80px;
+    right: 35px;
+}
+
+.decoracion-3 {
+    bottom: 70px;
+    left: 35px;
+}
+
+/* GIF DE LAIN */
+
+.gif-decorativo {
+    position: absolute;
+    pointer-events: none;
+}
+
+.lain-fondo {
+    right: 40px;
+    bottom: 70px;
+    width: 180px;
+    height: auto;
+}
+
+.estado-ventana {
+    height: 22px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #010406;
+    border-bottom: 1px solid #004b55;
+
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    color: rgba(0, 234, 255, 0.6);
+}
+
+/* BOTONES X DE TODAS LAS VENTANAS */
+
+.boton-cerrar,
+.boton-cerrar-dibujos,
+.boton-cerrar-musica,
+.boton-cerrar-juegos {
+    width: 24px;
+    height: 20px;
+
+    background: #071014;
+    color: #00eaff;
+
+    border: 1px solid #00d9f5;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.boton-cerrar:hover,
+.boton-cerrar-dibujos:hover,
+.boton-cerrar-musica:hover,
+.boton-cerrar-juegos:hover {
+    background: #00d9f5;
+    color: #000000;
+
+    box-shadow: 0 0 8px #00eaff;
+}
+
+/* EFECTOS DE LA BARRA INFERIOR */
+
+.accesos-barra span {
+    padding: 7px 10px;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.accesos-barra span:hover {
+    background: rgba(0, 217, 245, 0.12);
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 -2px 0 #00eaff,
+        0 0 8px rgba(0, 234, 255, 0.25);
+
+    text-shadow: 0 0 5px #00eaff;
+}
+
+.menu-inicio {
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.menu-inicio:hover {
+    background: #00d9f5;
+    color: #000000;
+    text-shadow: none;
+}
+
+@keyframes abrirVentana {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.ventana {
+    animation: abrirVentana 0.18s ease-out;
+}

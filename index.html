@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mi página personal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="decoraciones">
+
+        <img
+    src="decoracion/lain-iwakura.gif"
+    class="gif-decorativo lain-fondo"
+    alt=""
+>
+    <div class="texto-sistema decoracion-1">
+        SYS://PERSONAL_ARCHIVE
+    </div>
+
+    <div class="texto-sistema decoracion-2">
+        CONNECTION_STATUS: ONLINE
+    </div>
+
+    <div class="texto-sistema decoracion-3">
+        USER://DAVID
+    </div>
+</div>
+
+    <div class="ventana">
+
+        <div class="barra-titulo">
+            <span>[ SOBRE MÍ ]</span>
+            <div class="estado-ventana">
+    <span>● ONLINE</span>
+    <span>LOCAL://PROFILE</span>
+</div>
+            <button class="boton-cerrar">X</button>
+        </div>
+
+        <div class="contenido-ventana">
+            <h1>Hola, soy David</h1>
+
+            <p>
+                No sé cómo llegaste hasta aquí, pero bienvenido.
+            </p>
+
+            <p>
+                Explora un poco. Tal vez encuentres algo interesante.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="ventana ventana-dibujos">
+
+    <div class="barra-titulo">
+        <span>[ DIBUJOS ]</span>
+        <button class="boton-cerrar-dibujos">X</button>
+    </div>
+
+<div class="contenido-ventana contenido-dibujos">
+
+    <h1>Mis dibujos</h1>
+
+    <p>
+        Algunas cosas que he dibujado.
+    </p>
+
+<div class="galeria-dibujos" id="galeria-dibujos">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="ventana ventana-musica">
+
+    <div class="barra-titulo">
+        <span>[ MÚSICA ]</span>
+        <button class="boton-cerrar-musica">X</button>
+    </div>
+
+    <div class="contenido-musica">
+
+<div class="pantalla-musica">
+    <span>♪ NOW PLAYING</span>
+
+    <p class="nombre-cancion">
+        What You Know
+    </p>
+
+    <div class="barra-progreso" id="barra-progreso">
+    <div class="progreso" id="progreso"></div>
+</div>
+
+    <div class="tiempo-musica">
+        <span id="tiempo-actual">00:00</span>
+        <span>/</span>
+        <span id="duracion-total">00:00</span>
+    </div>
+</div>
+
+<div class="controles-musica">
+    <button id="boton-anterior">◀◀</button>
+    <button id="boton-play">▶</button>
+    <button id="boton-stop">■</button>
+    <button id="boton-siguiente">▶▶</button>
+</div>
+
+<audio id="reproductor">
+    <source src="audio/What You Know_spotdown.org.mp3" type="audio/mpeg">
+</audio>
+
+    </div>
+
+</div>
+
+<div class="ventana ventana-juegos">
+
+    <div class="barra-titulo">
+        <span>[ JUEGOS ]</span>
+        <button class="boton-cerrar-juegos">X</button>
+    </div>
+
+    <div class="contenido-ventana contenido-juegos">
+
+        <h1>Mis juegos</h1>
+
+        <p>
+            Juegos que he jugado y lo que pienso de ellos.
+        </p>
+
+        <div class="galeria-juegos" id="galeria-juegos">
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="ficha-juego" id="ficha-juego">
+
+    <div class="ficha-juego-contenido">
+
+        <div class="barra-ficha-juego">
+            <span>[ GAME_INFO.exe ]</span>
+            <button id="cerrar-ficha-juego">X</button>
+        </div>
+
+        <div class="interior-ficha-juego">
+
+            <img id="ficha-portada" src="" alt="Portada del juego">
+
+            <div class="datos-juego">
+
+                <h2 id="ficha-nombre"></h2>
+
+                <p>ESTADO > <span id="ficha-estado"></span></p>
+                <p>NOTA > <span id="ficha-nota"></span></p>
+                <p>HORAS > <span id="ficha-horas"></span></p>
+
+            </div>
+
+        </div>
+
+        <div class="texto-ficha">
+            <p>[ MI OPINIÓN ]</p>
+            <p id="ficha-opinion">
+                Todavía no hay una opinión escrita.
+            </p>
+
+            <p>[ RECUERDOS / COSAS QUE HICE ]</p>
+            <p id="ficha-recuerdos">
+                Todavía no hay recuerdos guardados.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="visor-dibujo" id="visor-dibujo">
+
+    <div class="visor-contenido">
+
+        <button class="cerrar-visor" id="cerrar-visor">X</button>
+
+        <button class="visor-anterior" id="visor-anterior">◀</button>
+
+        <img id="imagen-grande" src="" alt="Dibujo ampliado">
+
+        <button class="visor-siguiente" id="visor-siguiente">▶</button>
+
+    </div>
+
+</div>
+
+    <div class="barra-inferior">
+
+        <div class="menu-inicio">
+            ◈ MENU
+        </div>
+
+        <div class="accesos-barra">
+            <span id="abrir-sobre-mi">SOBRE MÍ</span>
+            <span id="abrir-dibujos">DIBUJOS</span>
+            <span id="abrir-musica">MÚSICA</span>
+            <span id="abrir-juegos">JUEGOS</span>
+            <span>CLIPS</span>
+        </div>
+
+        <div class="reloj">
+            00:00
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
